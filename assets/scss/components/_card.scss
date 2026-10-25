@@ -1,0 +1,195 @@
+.card {
+    border-radius: $radius-2;
+    border: 2px solid $color-grey-1;
+    width: 100%;
+    overflow: hidden;
+    background: $color-bright-1;
+    position: relative;
+
+    &--row {
+        display: flex;
+
+        &-desktop {
+            @include screen('desktop') {
+                display: flex;
+            }
+        }
+    }
+
+    &--radius-big {
+        border-radius: $radius;
+    }
+
+
+    &--bg-bright {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    &--bg-bright-3 {
+        background: $color-bright-3;
+        border-color: $color-grey-4;
+
+        .card__content--after {
+            &::after {
+                background: $color-bright-3 !important;
+            }
+
+        }
+    }
+
+    &--without-bg {
+        background: rgba(0, 0, 0, 0);
+        border-color: rgba(0, 0, 0, 0);
+    }
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 21px;
+        width: 100%;
+
+        position: relative;
+
+        &--padding-small {
+            padding: 6px 12px;
+        }
+
+        &--padding-md {
+            padding: 12px 12px;
+        }
+
+        &--without-padding {
+            padding: 0;
+        }
+
+        &--gap-big {
+            gap: 12px;
+        }
+
+        &--gap-extra {
+            gap: 16px;
+        }
+
+        &--after {
+            &::after {
+                content: '';
+                position: absolute;
+                left: 100%;
+                top: 0;
+                bottom: 0;
+                background: $color-bright-1;
+                border-radius: 0 $radius-2 $radius-2 0;
+                width: 10px;
+                z-index: 2;
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        max-height: 200px;
+        border-radius: 0 0 $radius-2 $radius-2;
+        object-fit: cover;
+
+        @include screen('desktop') {
+            order: 1;
+            width: 30vw;
+            min-width: 100px;
+            // max-height: 100%;
+            margin-left: auto;
+            border-radius: 0;
+            height: 100%;
+        }
+    }
+
+    &--orange-border {
+        border-color: $color-orange-1;
+    }
+
+    &--bright-border {
+        border-color: $color-bright-3;
+    }
+
+    &--without-border {
+        border: none;
+    }
+
+
+
+    &__label {
+        background: $color-bright-3;
+        color: $color-blue-1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px 8px;
+        border-radius: $radius-3;
+        font-size: $size-sm;
+        font-weight: 500;
+        line-height: 1;
+        height: 20px;
+
+        &--bg-bright {
+            background: $color-bright-1;
+            color: $color-blue-1;
+        }
+
+        &--bold {
+            font-weight: 700;
+        }
+
+        &--big {
+            height: 24px;
+        }
+    }
+
+    &__text {
+        font-size: $size-md;
+        position: relative;
+
+        &--main {
+            font-size: $size-xl;
+            font-weight: 700;
+        }
+
+        &--orange {
+            color: $color-orange-1;
+        }
+
+        &--extra {
+            font-weight: 800;
+        }
+    }
+
+    &__text-group {
+        width: 100%;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        position: relative;
+
+        &--space-between {
+            justify-content: space-between;
+        }
+
+        &--column {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-self: start;
+            gap: 6px;
+        }
+    }
+
+    &--big {
+        .card__text {
+            font-size: $size-md;
+        }
+
+        .card__text--main {
+            font-size: $size-3xl;
+            font-weight: 800;
+        }
+    }
+}

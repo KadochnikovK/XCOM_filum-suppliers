@@ -1,0 +1,368 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $color-bright-5;
+
+    margin-bottom: 66px;
+
+    @include screen('desktop') {
+        margin-bottom: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+        // color: $color-orange-1;
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__content {
+        width: 100%;
+        max-width: $max-width;
+        display: grid;
+        padding: 32px 20px;
+        gap: 20px;
+
+        &--flat {
+            padding-block: 0;
+        }
+
+        @include screen('desktop') {
+            padding: 112px 40px;
+        }
+    }
+
+    &--bg-blue {
+        background-color: $color-blue-1;
+
+        * {
+            color: $color-bright-1 !important;
+            border-color: $color-bright-1 !important;
+        }
+    }
+
+    &--bg-bright {
+        background: $color-bright-1;
+    }
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    display: flex;
+    gap: 8px;
+    padding: 11px 17px;
+    border: 1px solid $color-bright-4;
+    background: $color-bright-1;
+    border-radius: $radius-2;
+    width: max-content;
+    position: relative;
+    align-items: center;
+
+    @include screen("desktop") {
+        border-width: 2px;
+        padding: 16px;
+    }
+
+    &--bg-white {
+        background: $color-bright-1;
+    }
+
+
+    &--bg-bright {
+        background: $color-bright-3;
+    }
+
+    &--image-bg {
+        background: var(--bg-image) no-repeat center / cover;
+
+        width: 168px;
+        height: 210px;
+        border: none;
+    }
+
+    &--without-bg {
+        background: none;
+    }
+
+    &--border-grey {
+        border-color: $color-grey-1;
+    }
+
+    &--border-bright {
+        border-color: $color-bright-3;
+    }
+
+    &--color-blue {
+        * {
+            color: $color-blue-1 !important;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__text {
+        font-size: $size-2xs;
+        color: $color-grey-1;
+        line-height: 1;
+
+        &--main {
+            font-size: $size-sm;
+            color: $color-blue-1;
+            font-weight: 700;
+
+            &-big {
+                font-size: $size-base;
+            }
+        }
+
+        &--big {
+            font-size: $size-sm;
+        }
+
+        &--orange {
+            color: $color-orange-1;
+        }
+
+        &--bright {
+            color: $color-bright-1;
+        }
+
+        @include screen("desktop") {
+            font-size: $size-sm;
+
+            &--main {
+                font-size: $size-md;
+            }
+
+            &--big {
+                font-size: $size-md;
+            }
+        }
+    }
+
+    &--big {
+        padding: 16px 16px;
+        width: 100%;
+
+        .label__text {
+            font-size: $size-sm;
+        }
+
+        .label__text--main {
+            font-size: $size-md;
+        }
+    }
+}
+
+.grid {
+    display: grid;
+
+    gap: 12px;
+
+    &--2 {
+        grid-template-columns: repeat(2, 1fr);
+
+        &-desktop {
+            @include screen("desktop") {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    &--3 {
+        grid-template-columns: repeat(3, 1fr);
+
+        &-desktop {
+            @include screen("desktop") {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+
+    &--4 {
+        grid-template-columns: repeat(4, 1fr);
+
+        &-desktop {
+            @include screen("desktop") {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+
+    &--12 {
+        grid-template-columns: repeat(12, 1fr);
+
+        &-desktop {
+            @include screen("desktop") {
+                grid-template-columns: repeat(12, 1fr);
+            }
+        }
+    }
+
+
+    @include screen('desktop') {
+        gap: 20px;
+    }
+
+
+    &--gap-big {
+        gap: 20px;
+
+        @include screen("desktop") {
+            gap: 40px;
+        }
+    }
+}
+
+.flex {
+    display: flex;
+
+    &--column {
+        flex-direction: column;
+    }
+
+    gap: 20px;
+}
+
+.icon-block {
+    border-radius: $radius-2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // width: 56px;
+    // height: 56px;
+    aspect-ratio: 1;
+    background: $color-bright-1;
+    padding: $size-3xs;
+
+    img {
+        // width: 30px;
+    }
+
+    &--small {
+        width: 28px;
+        height: 28px;
+        border-radius: $radius-3;
+
+        img {
+            width: 12px;
+        }
+
+        @include screen("desktop") {
+            width: 46px;
+            height: 46px;
+            border-radius: $radius-2;
+
+            img {
+                width: 24px;
+            }
+
+            &--small {
+                width: 18px;
+            }
+        }
+    }
+
+    &--xs {
+        width: 28px;
+        height: 28px;
+        border-radius: $radius-3;
+    }
+
+    &__circle {
+        width: 10px;
+        height: 10px;
+        background: $color-blue-1;
+        border-radius: 10pc;
+    }
+
+    &--grey {
+        background: $color-bright-1 !important;
+        border: 1px solid $color-grey-1;
+
+        .icon-block__circle {
+            background: $color-grey-1;
+        }
+
+        @include screen("desktop") {
+            border-width: 2px;
+        }
+    }
+
+    &--bright {
+        background: $color-bright-1;
+        color: $color-blue-1;
+    }
+
+    &--bright-2 {
+        background: $color-bright-6;
+    }
+
+    &--bright-3 {
+        background: $color-bright-3;
+        color: $color-blue-1;
+        border: 1px solid $color-grey-4;
+
+        @include screen("desktop") {
+            border-width: 2px;
+        }
+    }
+
+    &--blue {
+        background: $color-blue-1;
+        color: $color-bright-1;
+    }
+
+    &--opacity {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.big-number {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-weight: 700;
+    font-size: 140px;
+    line-height: 100px;
+    color: $color-bright-2;
+    // text-shadow: $shadow;
+    transform: translateX(40%);
+    // display: flex;
+}
+
+.divider {
+    width: 100%;
+    border-bottom: 2px solid $color-grey-1;
+
+    &--bright {
+        border-color: $color-bright-3;
+    }
+}
+
+.order-1-desktop {
+    @include screen('desktop') {
+        order: 1;
+    }
+}

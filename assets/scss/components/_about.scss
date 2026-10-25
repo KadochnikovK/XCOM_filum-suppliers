@@ -1,0 +1,55 @@
+.about {
+    &__cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card-group {
+        margin-left: 11px;
+        display: flex;
+        gap: 28px;
+
+
+        &:not(:nth-last-child(1)) {
+            border-left: 2px solid $color-grey-1;
+            padding-bottom: 24px;
+        }
+    }
+
+
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include screen('desktop') {
+            grid-column: span 2;
+        }
+
+    }
+
+    &__image {
+        position: relative;
+        width: 100%;
+
+        img {
+            width: 100%;
+            max-height: 50vh;
+            object-fit: cover;
+            aspect-ratio: 1;
+            border-radius: $radius-2;
+        }
+
+        @include screen('desktop') {
+            img {
+                height: 100%;
+                max-height: none;
+                aspect-ratio: auto;
+            }
+
+        }
+    }
+
+
+}

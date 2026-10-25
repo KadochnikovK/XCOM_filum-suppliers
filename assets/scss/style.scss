@@ -1,0 +1,44 @@
+@import "./components/root";
+@import "./components/base";
+@import "./components/button";
+@import "./components/typography";
+@import "./components/headline-group";
+@import "./components/header";
+@import "./components/hero";
+@import "./components/card";
+@import "./components/about";
+@import "./components/map";
+@import "./components/footer";
+@import "./components/menu";
+@import "./components/action";
+@import "./components/input";
+@import "./components/hamburger";
+@import "./components/links";
+@import "./components/certificate";
+
+.mobile-only {
+    @include screen('desktop') {
+        display: none;
+    }
+}
+
+.desktop-only {
+
+    display: none;
+
+    @include screen('desktop') {
+        display: block;
+    }
+}
+
+@each $name, $value in $colors {
+    .text-#{$name} {
+        color: $value;
+    }
+}
+
+@each $name, $value in $colors {
+    .bg-#{$name} {
+        background: $value;
+    }
+}
